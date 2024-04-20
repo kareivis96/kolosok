@@ -19,7 +19,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
-        "src/*": ["./src/*"],
         "styles/*": ["./src/styles/*"],
         "assets/*": ["./src/assets/*"],
         "mocks/*": ["./src/mocks/*"],
