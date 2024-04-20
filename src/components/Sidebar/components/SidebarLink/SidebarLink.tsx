@@ -23,7 +23,7 @@ const SidebarLink: FC<TSidebarLink> = (props) => {
     });
 
     return (
-        <Button className={buttonClasses} onClick={onClick} disabled={props.isDiabled}>
+        <Button size={'large'} className={buttonClasses} onClick={onClick} disabled={props.isDiabled}>
             {props.title}
         </Button>
     );

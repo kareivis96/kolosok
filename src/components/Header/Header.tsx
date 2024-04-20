@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import { Typography } from 'antd';
 import classnames from 'classnames';
 import type { FC } from 'react';
 import { memo } from 'react';
@@ -16,9 +16,9 @@ const Header: FC<THeader> = (props) => {
 
     return (
         <header className={classnames(CSS.header, props.className)}>
-            <Button onClick={onClick} type='text'>
+            <Typography.Title className={CSS.header__logo} onClick={onClick}>
                 Колосок
-            </Button>
+            </Typography.Title>
         </header>
     );
 };
