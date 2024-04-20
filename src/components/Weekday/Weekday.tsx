@@ -1,20 +1,26 @@
-import { Button, Flex } from 'antd';
-import type { FC} from 'react';
-import { memo } from 'react';
+import { Radio } from 'antd';
+import type { ChangeEvent, FC } from 'react';
+import { memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { WEEKDAY } from './constants';
 
 export const Weekday: FC = memo(() => {
     const navigate = useNavigate();
+    const [size, setSize] = useState('pn');
+
+    const onClick = (e: ChangeEvent<HTMLInputElement>) => {
+        navigate(`/menu/${size}`);
+        setSize(e.target.value);
+    };
 
     return (
-        <Flex gap={20}>
-            {WEEKDAY.map((dey) => (
-                <Button key={dey.id} onClick={() => navigate(`/menu/${dey.href}`)}>
-                    {dey.name}
-                </Button>
+        <Radio.Group value={size} onChange={(e) => onClick(e)}>
+            {WEEKDAY.map((day) => (
+                <Radio.Button key={day.id} value={day.href}>
+                    {day.name}
+                </Radio.Button>
             ))}
-        </Flex>
+        </Radio.Group>
     );
 });
