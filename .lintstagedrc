@@ -1,0 +1,5 @@
+{
+    "*.{css,scss}": "npm run style:fix",
+    "*.{ts,tsx}": "npm run lint:fix",
+    "*.{ts,tsx,css,scss}": "npm run prett:fix"
+}

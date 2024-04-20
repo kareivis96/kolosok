@@ -1,0 +1,28 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-recommended",
+        "stylelint-config-standard-scss",
+        "stylelint-config-recommended-scss",
+        "stylelint-config-rational-order"
+    ],
+    "plugins": [
+        "stylelint-scss",
+        "stylelint-order",
+        "stylelint-config-rational-order/plugin"
+    ],
+    "rules": {
+        "media-feature-range-notation": null,
+        "declaration-block-no-redundant-longhand-properties": null,
+        "selector-class-pattern": null,
+        "keyframes-name-pattern": null,
+        "value-keyword-case": null,
+        "property-no-vendor-prefix": null,
+        "function-url-quotes": null,
+        "import-notation": null,
+        "no-invalid-position-at-import-rule": null,
+        "at-rule-no-unknown": null,
+        "scss/at-rule-no-unknown": true,
+        "scss/at-import-no-partial-leading-underscore": null
+    }
+}
