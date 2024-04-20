@@ -1,3 +1,7 @@
 .sidebar_link {
     display: flex;
+
+    &__active {
+        color: #4096ff;
+    }
 }
