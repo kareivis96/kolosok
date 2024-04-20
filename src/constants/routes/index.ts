@@ -7,6 +7,6 @@ export const APP_LINKS: TAppLinks = {
     },
     menu: {
         title: 'Меню',
-        link: '/menu',
+        link: '/menu/:day?',
     },
 } as const;

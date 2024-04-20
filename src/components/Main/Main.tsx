@@ -6,7 +6,7 @@ import CSS from './Main.module.scss';
 import type { TMain } from './types';
 
 const Main: FC<TMain> = (props) => {
-    return <aside className={classnames(CSS.main, props.className)}>Main</aside>;
+    return <aside className={classnames(CSS.main, props.className)}>{props.children}</aside>;
 };
 
 export default memo(Main);

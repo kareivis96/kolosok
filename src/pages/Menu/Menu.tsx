@@ -1,5 +1,11 @@
 import { memo } from 'react';
 
+import { Weekday } from 'components/Weekday';
+
 export const Menu = memo(() => {
-    return <div>Menu</div>;
+    return (
+        <div>
+            <Weekday />
+        </div>
+    );
 });
