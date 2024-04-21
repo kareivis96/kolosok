@@ -1,5 +1,6 @@
+import type { RadioChangeEvent } from 'antd';
 import { Radio } from 'antd';
-import type { ChangeEvent, FC } from 'react';
+import type { FC } from 'react';
 import { memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,7 +10,7 @@ export const Weekday: FC = memo(() => {
     const navigate = useNavigate();
     const [size, setSize] = useState('pn');
 
-    const onClick = (e: ChangeEvent<HTMLInputElement>) => {
+    const onClick = (e: RadioChangeEvent) => {
         navigate(`/menu/${size}`);
         setSize(e.target.value);
     };
