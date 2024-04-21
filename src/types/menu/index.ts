@@ -11,5 +11,5 @@ export type TDayMenu = {
 };
 
 export type TCardMenu = {
-    dayMenu: [TDayMenu];
+    dayMenu: TDayMenu[];
 };

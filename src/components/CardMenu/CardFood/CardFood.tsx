@@ -1,4 +1,4 @@
-import type { FC} from 'react';
+import type { FC } from 'react';
 import { memo } from 'react';
 
 import type { TFood } from 'types/menu';
