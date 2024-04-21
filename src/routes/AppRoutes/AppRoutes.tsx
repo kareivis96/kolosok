@@ -18,7 +18,7 @@ const AppRoutes: FC = () => {
     return (
         <Routes>
             <Route path='/' element={<AppLayout />}>
-                <Route index element={<Home />} />
+                <Route index element={<Home title={APP_LINKS.home.title} />} />
 
                 <Route path={APP_LINKS.schedule.link} element={<Schedule title={APP_LINKS.schedule.title} />} />
                 <Route path={APP_LINKS.students.link} element={<Students title={APP_LINKS.students.title} />} />
