@@ -1,11 +1,18 @@
+import type { FC } from 'react';
 import { memo } from 'react';
 
 import { Weekday } from 'components/Weekday';
+import { PageHeading } from 'components/layout/PageHeading';
 
-export const Menu = memo(() => {
+import type { TMenu } from './types';
+
+export const Menu: FC<TMenu> = memo((props) => {
     return (
-        <div>
-            <Weekday />
-        </div>
+        <>
+            <PageHeading title={props.title} />
+            <div>
+                <Weekday />
+            </div>
+        </>
     );
 });
