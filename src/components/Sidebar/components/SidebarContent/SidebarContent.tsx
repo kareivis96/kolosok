@@ -12,7 +12,7 @@ const SidebarContent: FC = () => {
     return (
         <div className={CSS.sidebar_content}>
             <SidebarLink title={students.title} link={students.link} isDiabled={students.isDisabled} />
-            <SidebarLink title={menu.title} link={menu.link} isDiabled={menu.isDisabled} />
+            <SidebarLink title={menu.title} link={'/menu/pn'} isDiabled={menu.isDisabled} />
             <SidebarLink title={attendance.title} link={attendance.link} isDiabled={attendance.isDisabled} />
             <SidebarLink title={schedule.title} link={schedule.link} isDiabled={schedule.isDisabled} />
             <SidebarLink title={teachers.title} link={teachers.link} isDiabled={teachers.isDisabled} />
