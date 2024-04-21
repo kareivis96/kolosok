@@ -1,10 +1,16 @@
 import type { FC } from 'react';
 import { memo } from 'react';
 
-// import CSS from './Students.module.scss';
+import { PageHeading } from 'components/layout/PageHeading';
 
-const Students: FC = () => {
-    return <>Воспитанники</>;
+import type { TStudents } from './types';
+
+const Students: FC<TStudents> = (props) => {
+    return (
+        <div>
+            <PageHeading title={props.title} />
+        </div>
+    );
 };
 
 export default memo(Students);

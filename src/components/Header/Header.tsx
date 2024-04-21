@@ -16,7 +16,7 @@ const Header: FC<THeader> = (props) => {
 
     return (
         <header className={classnames(CSS.header, props.className)}>
-            <Typography.Title className={CSS.header__logo} onClick={onClick}>
+            <Typography.Title className={CSS.header__logo} onClick={onClick} style={{ margin: 0 }}>
                 Колосок
             </Typography.Title>
         </header>

@@ -18,13 +18,13 @@ const AppRoutes: FC = () => {
     return (
         <Routes>
             <Route path='/' element={<AppLayout />}>
-                <Route index element={<Home />} />
+                <Route index element={<Home title={APP_LINKS.home.title} />} />
 
-                <Route path={APP_LINKS.schedule.link} element={<Schedule />} />
-                <Route path={APP_LINKS.students.link} element={<Students />} />
-                <Route path={APP_LINKS.teachers.link} element={<Teachers />} />
-                <Route path={APP_LINKS.attendance.link} element={<Attendance />} />
-                <Route path={APP_LINKS.menu.link} element={<Menu />} />
+                <Route path={APP_LINKS.schedule.link} element={<Schedule title={APP_LINKS.schedule.title} />} />
+                <Route path={APP_LINKS.students.link} element={<Students title={APP_LINKS.students.title} />} />
+                <Route path={APP_LINKS.teachers.link} element={<Teachers title={APP_LINKS.teachers.title} />} />
+                <Route path={APP_LINKS.attendance.link} element={<Attendance title={APP_LINKS.attendance.title} />} />
+                <Route path={APP_LINKS.menu.link} element={<Menu title={APP_LINKS.menu.title} />} />
             </Route>
             <Route path='*' element={<PageNotFound />} />
         </Routes>

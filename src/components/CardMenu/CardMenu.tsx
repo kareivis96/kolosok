@@ -1,5 +1,5 @@
 import { Flex } from 'antd';
-import type { FC} from 'react';
+import type { FC } from 'react';
 import { memo } from 'react';
 
 import { CardFood } from 'components/CardMenu/CardFood';

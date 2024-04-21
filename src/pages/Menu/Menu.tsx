@@ -1,10 +1,14 @@
 import { Flex } from 'antd';
+import type { FC } from 'react';
 import { memo } from 'react';
 
 import { CardMenu } from 'components/CardMenu';
 import { Weekday } from 'components/Weekday';
+import { PageHeading } from 'components/layout/PageHeading';
 
-export const Menu = memo(() => {
+import type { TMenu } from './types';
+
+export const Menu: FC<TMenu> = memo((props) => {
     const data = {
         id: 1,
         dayTitle: 'Понедельник',
@@ -25,6 +29,7 @@ export const Menu = memo(() => {
     };
     return (
         <Flex vertical gap={20}>
+            <PageHeading title={props.title} />
             <Weekday />
             <Flex vertical gap={15}>
                 <CardMenu props={data} />
