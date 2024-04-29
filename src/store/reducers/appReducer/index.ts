@@ -1,1 +1,1 @@
-export { themeReducer, setTheme } from './appSlice';
+export { appReducer, setTheme } from './appSlice';
