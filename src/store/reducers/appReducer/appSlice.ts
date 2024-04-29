@@ -15,4 +15,4 @@ export const appSlice = createSlice({
 });
 
 export const { setTheme } = appSlice.actions;
-export const themeReducer = appSlice.reducer;
+export const appReducer = appSlice.reducer;

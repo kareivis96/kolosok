@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import { appSlice } from 'store/reducers/appReducer';
+import { appReducer } from 'store/reducers/appReducer';
+import { studentReducer } from 'store/reducers/studentsReducer';
 
 export const rootReducer = combineReducers({
-    appSlice,
+    appReducer,
+    studentReducer,
 });
 
 export const setupStore = () => {
