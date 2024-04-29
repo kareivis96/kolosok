@@ -1,9 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import { appSlice } from 'store/reducers/appReducer';
+import { appReducer } from 'store/reducers/appReducer';
+import { studentReducer } from 'store/reducers/studentsReducer';
+
+import { scheduleReducer } from './reducers/scheduleReducer';
 
 export const rootReducer = combineReducers({
-    appSlice,
+    appReducer,
+    studentReducer,
+    scheduleReducer,
 });
 
 export const setupStore = () => {
