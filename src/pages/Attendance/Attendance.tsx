@@ -1,10 +1,16 @@
 import type { FC } from 'react';
 import { memo } from 'react';
 
-// import CSS from './Attendance.module.scss';
+import { PageHeading } from 'components/layout/PageHeading';
 
-const Attendance: FC = () => {
-    return <>Attendance</>;
+import type { TAttendance } from './types';
+
+const Attendance: FC<TAttendance> = (props) => {
+    return (
+        <div>
+            <PageHeading title={props.title} />
+        </div>
+    );
 };
 
 export default memo(Attendance);
