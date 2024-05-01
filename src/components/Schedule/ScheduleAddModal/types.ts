@@ -1,5 +1,16 @@
+import type { Dayjs } from 'dayjs';
+
+import type { TDaysOfWeek } from 'types/daysOfWeek';
+
 export type TScheduleAddModal = {
     isOpen: boolean;
-    onSubmit: () => void;
+    onSubmit: (values: TAddLessonFormValues) => void;
     onClose: () => void;
+};
+
+export type TAddLessonFormValues = {
+    day: TDaysOfWeek;
+    name: string;
+    teacher: string;
+    time: Dayjs;
 };

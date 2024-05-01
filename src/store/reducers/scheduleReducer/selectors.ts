@@ -6,11 +6,11 @@ import type { TDaysOfWeek } from 'types/daysOfWeek';
 
 const selectScheduleSlice = (state: RootState) => state.scheduleReducer;
 
-export const selectScheduleByDay = (day: TDaysOfWeek) =>
+export const selectLessonsByDay = (day: TDaysOfWeek | null) =>
     createSelector(selectScheduleSlice, (state) => {
-        return state.schedule[day];
+        return day
+            ? state.lessons.filter((lesson) => {
+                  return lesson.day === day;
+              })
+            : [];
     });
-
-export const selectScheduleDays = createSelector(selectScheduleSlice, (state) => {
-    return Object.keys(state.schedule) as TDaysOfWeek[];
-});
