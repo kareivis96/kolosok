@@ -1,59 +1,39 @@
-import type { TSchedule } from 'types/schedule';
+import type { TLesson } from 'types/schedule';
 
-export const MOCK_SCHEDULE: TSchedule = {
-    monday: {
-        id: 'fghyuio6879',
-        lessons: [
-            {
-                id: '123dfg',
-                name: 'Музыка',
-                time: '10:00',
-                teacher: 'Соколова Елена Ивановна',
-            },
-        ],
+export const MOCK_LESSONS: TLesson[] = [
+    {
+        id: '123dfg',
+        name: 'Музыка',
+        time: '10:00',
+        teacher: 'Соколова Елена Ивановна',
+        day: 'monday',
     },
-    tuesday: {
-        id: 'dsfgrw7567',
-        lessons: [
-            {
-                id: '5234sdfgd',
-                name: 'ИЗО',
-                time: '10:00',
-                teacher: 'Соколова Елена Ивановна',
-            },
-        ],
+    {
+        id: '5234sdfgd',
+        name: 'ИЗО',
+        time: '10:00',
+        teacher: 'Соколова Елена Ивановна',
+        day: 'tuesday',
     },
-    wednesday: {
-        id: 'fgh6i867',
-        lessons: [
-            {
-                id: '456dftyrt',
-                name: 'Танцы',
-                time: '10:00',
-                teacher: 'Соколова Елена Ивановна',
-            },
-        ],
+    {
+        id: '456dftyrt',
+        name: 'Танцы',
+        time: '10:00',
+        teacher: 'Соколова Елена Ивановна',
+        day: 'wednesday',
     },
-    thursday: {
-        id: 'sadfert435',
-        lessons: [
-            {
-                id: 'ert345',
-                name: 'Музыка',
-                time: '12:00',
-                teacher: 'Соколова Елена Ивановна',
-            },
-        ],
+    {
+        id: 'ert345',
+        name: 'Музыка',
+        time: '12:00',
+        teacher: 'Соколова Елена Ивановна',
+        day: 'thursday',
     },
-    friday: {
-        id: '456vmn',
-        lessons: [
-            {
-                id: '123dfg',
-                name: 'Музыка',
-                time: '10:00',
-                teacher: 'Соколова Елена Ивановна',
-            },
-        ],
+    {
+        id: '123dfg',
+        name: 'Музыка',
+        time: '10:00',
+        teacher: 'Соколова Елена Ивановна',
+        day: 'friday',
     },
-};
+];
