@@ -20,9 +20,7 @@ export const Weekday: FC = memo(() => {
         <Flex>
             <Radio.Group value={currentDay} onChange={(e) => onDayChange(e)}>
                 {WEEKDAYS.map((el) => (
-                    <Radio.Button key={el.id} value={el.href}>
-                        {el.name}
-                    </Radio.Button>
+                    <Radio.Button key={el.id}>{el.name}</Radio.Button>
                 ))}
             </Radio.Group>
 
