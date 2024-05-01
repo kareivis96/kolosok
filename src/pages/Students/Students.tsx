@@ -54,8 +54,8 @@ const Students: FC<TStudents> = (props) => {
             />
             <Flex gap={8} wrap={'wrap'}>
                 {filteredStudents.map((student) => (
-                    <Card key={student.id} title={student.name} bordered style={{ width: 300 }}>
-                        <Typography.Text>{student.group.name}</Typography.Text>
+                    <Card key={student.id} hoverable title={student.name} bordered style={{ width: 300 }}>
+                        <Typography.Text>Группа: {student.group.name}</Typography.Text>
                     </Card>
                 ))}
             </Flex>
