@@ -4,12 +4,3 @@ export type TFood = {
     img: string;
     text: string;
 };
-
-export type TDayMenu = {
-    dayTitle: string;
-    data: TFood[];
-};
-
-export type TCardMenu = {
-    dayMenu: TDayMenu[];
-};
