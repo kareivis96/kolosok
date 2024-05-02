@@ -1,22 +1,25 @@
 import { PlusOutlined } from '@ant-design/icons';
 import type { RadioChangeEvent } from 'antd';
-import { Button, Card, Flex, Radio, Tooltip, Typography } from 'antd';
+import { Button, Flex, Radio, Tooltip, Typography } from 'antd';
 import type { FC } from 'react';
 import { memo, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
+import { LessonCard } from 'components/Schedule/LessonCard';
 import { ScheduleAddModal } from 'components/Schedule/ScheduleAddModal';
 import type { TAddLessonFormValues } from 'components/Schedule/ScheduleAddModal/types';
 import { PageHeading } from 'components/layout/PageHeading';
 
 import { MOCK_LESSONS } from 'mocks/schedule';
 
-import { selectLessonsByDay, setLessons } from 'store/reducers/scheduleReducer';
+import { addLesson, removeLesson, selectLessonsByDay, setLessons } from 'store/reducers/scheduleReducer';
 
 import { englishDayToRussian } from 'tools/englishDayToRussian';
+import { getRandomString } from 'tools/getRandomString';
 
 import { EDaysOfWeek, type TDaysOfWeek } from 'types/daysOfWeek';
+import type { TLesson } from 'types/schedule';
 
 import type { TSchedule } from './types';
 
@@ -37,13 +40,21 @@ const Schedule: FC<TSchedule> = (props) => {
         setIsModalOpen(true);
     };
 
-    const onAddLessonSubmit = (values: TAddLessonFormValues) => {
+    const onAddLesson = (values: TAddLessonFormValues) => {
         const lesson = {
             ...values,
             time: values.time.format('HH:mm'),
         };
+        const backendResponse = {
+            id: getRandomString(),
+            ...lesson,
+        };
+        dispach(addLesson(backendResponse));
+        setIsModalOpen(false);
+    };
 
-        console.log('submit', lesson);
+    const onRemoveLesson = (lesson: TLesson) => {
+        dispach(removeLesson(lesson));
     };
 
     const onCloseModal = () => {
@@ -76,18 +87,13 @@ const Schedule: FC<TSchedule> = (props) => {
             <Flex gap={8} wrap={'wrap'}>
                 {isLessons ? (
                     lessonsByDay.map((lesson) => (
-                        <Card key={lesson.id} hoverable title={lesson.name} bordered size='small'>
-                            <Flex gap={8} vertical wrap={'wrap'}>
-                                <Typography.Text>Учитель: {lesson.teacher}</Typography.Text>
-                                <Typography.Text>Время: {lesson.time}</Typography.Text>
-                            </Flex>
-                        </Card>
+                        <LessonCard key={lesson.id} lesson={lesson} onRemoveCard={onRemoveLesson} />
                     ))
                 ) : (
                     <Typography.Title level={5}>В этот день нет занятий</Typography.Title>
                 )}
             </Flex>
-            <ScheduleAddModal isOpen={isModalOpen} onClose={onCloseModal} onSubmit={onAddLessonSubmit} />
+            <ScheduleAddModal isOpen={isModalOpen} onClose={onCloseModal} onSubmit={onAddLesson} />
         </Flex>
     );
 };

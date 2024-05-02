@@ -43,7 +43,7 @@ const ScheduleAddModal: FC<TScheduleAddModal> = (props) => {
             destroyOnClose
             onOk={onSuccessClick}
         >
-            <Form layout='vertical' form={form} name='add_lesson_form'>
+            <Form layout='vertical' form={form} name='add_lesson_form' size='large'>
                 <Form.Item name='day' label='День' rules={[{ required: true, message: 'Укажите день занятия' }]}>
                     <Select allowClear placeholder='Выберите день'>
                         {Object.entries(EDaysOfWeek).map(([key, value]) => (
