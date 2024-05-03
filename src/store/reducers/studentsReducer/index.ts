@@ -1,2 +1,2 @@
-export { setStudets, setGroups, studentReducer } from './studentsSlice';
+export { setStudets, setGroups, addStudent, removeStudent, studentReducer } from './studentsSlice';
 export { selectGroups, selectStudents } from './selectors';
