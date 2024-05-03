@@ -14,11 +14,17 @@ export const studentSlice = createSlice({
         setStudets(state: TStudentsState, action: PayloadAction<TStudent[]>) {
             state.students = action.payload;
         },
+        addStudent(state: TStudentsState, action: PayloadAction<TStudent>) {
+            state.students = [...state.students, action.payload];
+        },
+        removeStudent(state: TStudentsState, action: PayloadAction<TStudent>) {
+            state.students = state.students.filter((student) => student.id !== action.payload.id);
+        },
         setGroups(state: TStudentsState, action: PayloadAction<TGroup[]>) {
             state.groups = action.payload;
         },
     },
 });
 
-export const { setStudets, setGroups } = studentSlice.actions;
+export const { setStudets, setGroups, addStudent, removeStudent } = studentSlice.actions;
 export const studentReducer = studentSlice.reducer;

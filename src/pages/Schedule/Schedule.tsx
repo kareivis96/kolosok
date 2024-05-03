@@ -8,7 +8,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import { LessonCard } from 'components/Schedule/LessonCard';
 import { ScheduleAddModal } from 'components/Schedule/ScheduleAddModal';
-import type { TAddLessonFormValues } from 'components/Schedule/ScheduleAddModal/types';
+import type { TAddLessonFormValues } from 'components/Schedule/ScheduleAddModal';
 import { PageHeading } from 'components/layout/PageHeading';
 
 import { MOCK_LESSONS } from 'mocks/schedule';
