@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: process.env.MODE === 'prod' ? '/kolosok/' : '/',
+    base: '/kolosok/',
     plugins: [react()],
     resolve: {
         alias: {
