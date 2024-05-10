@@ -1,14 +1,8 @@
-import type { EDaysOfWeek } from 'types/daysOfWeek';
-
-export type TSchedule = {
-    [K in EDaysOfWeek]?: {
-        id: string;
-        lessons: TLesson[];
-    };
-};
+import type { TDaysOfWeek } from 'types/daysOfWeek';
 
 export type TLesson = {
     id: string;
+    day: TDaysOfWeek;
     name: string;
     time: string;
     teacher: string;

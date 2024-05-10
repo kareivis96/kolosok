@@ -1,5 +1,5 @@
-import type { TSchedule } from 'types/schedule';
+import type { TLesson } from 'types/schedule';
 
 export type TScheduleState = {
-    schedule: TSchedule;
+    lessons: TLesson[];
 };

@@ -1,27 +1,30 @@
 import type { RadioChangeEvent } from 'antd';
-import { Radio } from 'antd';
+import { Flex, FloatButton, Radio } from 'antd';
 import type { FC } from 'react';
-import { memo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { memo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import { WEEKDAY } from './constants';
+import type { TDaysOfWeek } from 'types/daysOfWeek';
+
+import { WEEKDAYS } from './constants';
 
 export const Weekday: FC = memo(() => {
-    const navigate = useNavigate();
-    const [size, setSize] = useState('pn');
+    const [searchParams, setSearchParams] = useSearchParams();
+    const currentDay = (searchParams.get('day') as TDaysOfWeek) || null;
 
-    const onClick = (e: RadioChangeEvent) => {
-        navigate(`/menu/${size}`);
-        setSize(e.target.value);
+    const onDayChange = (event: RadioChangeEvent) => {
+        setSearchParams({ day: event.target.value });
     };
 
     return (
-        <Radio.Group value={size} onChange={(e) => onClick(e)}>
-            {WEEKDAY.map((day) => (
-                <Radio.Button key={day.id} value={day.href}>
-                    {day.name}
-                </Radio.Button>
-            ))}
-        </Radio.Group>
+        <Flex>
+            <Radio.Group value={currentDay} onChange={(e) => onDayChange(e)}>
+                {WEEKDAYS.map((el) => (
+                    <Radio.Button key={el.id}>{el.name}</Radio.Button>
+                ))}
+            </Radio.Group>
+
+            <FloatButton tooltip={<div>Изменить меню</div>} />
+        </Flex>
     );
 });

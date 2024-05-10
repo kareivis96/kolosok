@@ -1,2 +1,2 @@
-export { setSchedule, scheduleReducer } from './scheduleSlice';
-export { selectScheduleByDay, selectScheduleDays } from './selectors';
+export { setLessons, addLesson, removeLesson, scheduleReducer } from './scheduleSlice';
+export { selectLessonsByDay } from './selectors';
