@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import { App } from 'components/App';
 
@@ -16,9 +16,9 @@ const root = ReactDOM.createRoot(rootElement as HTMLElement);
 root.render(
     <StrictMode>
         <Provider store={store}>
-            <BrowserRouter basename={process.env.MODE === 'production' ? '/kolosok/' : '/'}>
+            <HashRouter basename={process.env.MODE === 'production' ? '/kolosok/' : '/'}>
                 <App />
-            </BrowserRouter>
+            </HashRouter>
         </Provider>
     </StrictMode>,
 );
