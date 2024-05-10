@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(rootElement as HTMLElement);
 root.render(
     <StrictMode>
         <Provider store={store}>
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.MODE === 'production' ? '/kolosok/' : '/'}>
                 <App />
             </BrowserRouter>
         </Provider>
