@@ -1,5 +1,5 @@
-import { CloseOutlined } from '@ant-design/icons';
-import { Button, Card, Flex, Typography } from 'antd';
+import { CloseOutlined, UserOutlined } from '@ant-design/icons';
+import { Avatar, Button, Card, Flex, Typography } from 'antd';
 import type { FC } from 'react';
 import { memo } from 'react';
 
@@ -23,6 +23,7 @@ const StudentsCard: FC<TStudentsCard> = (props) => {
             }
         >
             <Flex vertical gap={8} wrap={'wrap'}>
+                <Avatar size={'large'} shape={'square'} icon={<UserOutlined />} />
                 <Typography.Text>Дата рождения: {props.student.birthdate}</Typography.Text>
                 <Typography.Text>Группа: {props.student.group.name}</Typography.Text>
             </Flex>
